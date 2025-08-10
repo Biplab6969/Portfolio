@@ -1,57 +1,104 @@
 "use client";
 
 import React from 'react'
-import { SiJavascript, SiNextdotjs, SiNodedotjs, SiReact, SiTailwindcss, SiTypescript } from 'react-icons/si'
+import { FaJava } from 'react-icons/fa';
+import { SiCss3, SiExpress, SiFigma, SiHtml5, SiIntellijidea, SiJavascript, SiMongodb, SiMysql, SiNextdotjs, SiNodedotjs, SiPostgresql, SiPostman, SiPrisma, SiPython, SiReact, SiTailwindcss, SiTypescript } from 'react-icons/si'
+import { VscVscode } from 'react-icons/vsc';
 
 import Tilt from "react-parallax-tilt"
-const skills = [
-    {
-        name: "JavaScript",
-        icon: <SiJavascript />,
-    },
-        {
-        name: "React.js",
-        icon: <SiReact />,
-    },
-        {
-        name: "Next.js",
-        icon: <SiNextdotjs />,
-    },
-        {
-        name: "Node.js",
-        icon: <SiNodedotjs />,
-    },
-        {
-        name: "Tailwind CSS",
-        icon: <SiTailwindcss />,
-    },
-        {
-        name: "TypeScript",
-        icon: <SiTypescript />,
-    },
 
+const Language = [
+    { name: "JavaScript", icon: <SiJavascript /> },
+    { name: "TypeScript", icon: <SiTypescript /> },
+    { name: "Python", icon: <SiPython /> },
+    { name: "Java", icon: <FaJava /> },
 ]
 
+const Frontend = [
+    { name: "React.js", icon: <SiReact /> },
+    { name: "Next.js", icon: <SiNextdotjs /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+    { name: "HTML", icon: <SiHtml5 /> },
+    { name: "CSS", icon: <SiCss3 /> },
+]
+
+const Backend = [
+    { name: "Node.js", icon: <SiNodedotjs /> },
+    { name: "Express.js", icon: <SiExpress /> },
+    { name: "MongoDB", icon: <SiMongodb /> },
+    { name: "MySQL", icon: <SiMysql /> },
+    { name: "PostgreSQL", icon: <SiPostgresql /> },
+]
+
+const Tools = [
+    { name: "VS Code", icon: <VscVscode /> },
+    { name: "IntelliJ IDEA", icon: <SiIntellijidea /> },
+    { name: "Prisma", icon: <SiPrisma /> },
+    { name: "Figma", icon: <SiFigma /> },
+    { name: "Postman", icon: <SiPostman /> },
+]
+
+const Card = ({ skil, i }) => (
+    <Tilt key={skil.name} scale={1.2} transitionSpeed={400}>
+        <div
+            data-aos="flip-right"
+            data-aos-anchor-placement="top-center"
+            data-aos-delay={i * 100}
+            className='bg-[#14134145] text-center w-28 h-36 rounded-2xl flex flex-col items-center justify-center shadow-lg transition hover:scale-105'
+        >
+            <div className='text-3xl mb-2 text-gray-300'>{skil.icon}</div>
+            <p className='text-sm text-purple-400 mt-1'>{skil.name}</p>
+        </div>
+    </Tilt>
+)
+
 const Skills = () => {
-  return (
-    <div className='text-white pt-16 pb-16'>
-      <h1 className='text-center text-2xl md:text-4xl xl:text-5xl font-bold text-white'>
-        My <span className='text-cyan-300'>Skills</span>
-      </h1>
-      <div className='flex flex-wrap justify-center gap-6 mt-16'>
-        {skills.map((skil,i) => {
-            return (
-                <Tilt key={skil.name} scale={1.5} transitionSpeed={400}>
-                    <div data-aos="flip-right" data-aos-anchor-placement="top-center" data-aos-delay={i * 100} className='bg-[#14134145] text-center w-40 h-48 rounded-3xl flex flex-col items-center justify-center shadow-lg transition hover:scale-105'>
-                        <div className='text-5xl mb-4 text-gray-300'>{skil.icon}</div>
-                        <p className='text-purple-400 mt-1'>{skil.name}</p>
-                    </div>
-                </Tilt>
-            )
-        })}
-      </div>
-    </div>
-  )
+    return (
+        <div>
+            <h1 className='text-center text-2xl md:text-4xl lg:text-5xl font-bold text-white pt-16 pb-16'>
+                My <span className='text-cyan-300'>Skills</span>
+            </h1>
+            {/* Programming Language */}
+            <div className='text-white pt-4 pb-4 '>
+                <h1 className='text-center text-2xl md:text-3xl lg:text-3xl font-bold text-white'>
+                    <span className='text-cyan-300'>Programming Language</span>
+                </h1>
+                <div className='flex flex-wrap justify-center gap-6 mt-8'>
+                    {Language.map((skil, i) => <Card key={skil.name} skil={skil} i={i} />)}
+                </div>
+            </div>
+
+            {/* Frontend */}
+            <div className='text-white pt-4 pb-4'>
+                <h1 className='text-center text-2xl md:text-3xl lg:text-3xl font-bold text-white'>
+                    <span className='text-cyan-300'>Frontend</span>
+                </h1>
+                <div className='flex flex-wrap justify-center gap-6 mt-8'>
+                    {Frontend.map((skil, i) => <Card key={skil.name} skil={skil} i={i} />)}
+                </div>
+            </div>
+
+            {/* Backend & Database */}
+            <div className='text-white pt-4 pb-4'>
+                <h1 className='text-center text-2xl md:text-3xl lg:text-3xl font-bold text-white'>
+                    <span className='text-cyan-300'>Backend & Database</span>
+                </h1>
+                <div className='flex flex-wrap justify-center gap-6 mt-8'>
+                    {Backend.map((skil, i) => <Card key={skil.name} skil={skil} i={i} />)}
+                </div>
+            </div>
+
+            {/* Tools */}
+            <div className='text-white pt-4 pb-4'>
+                <h1 className='text-center text-2xl md:text-3xl lg:text-3xl font-bold text-white'>
+                    <span className='text-cyan-300'>Tools</span>
+                </h1>
+                <div className='flex flex-wrap justify-center gap-6 mt-8'>
+                    {Tools.map((skil, i) => <Card key={skil.name} skil={skil} i={i} />)}
+                </div>
+            </div>
+        </div>
+    )
 }
 
 export default Skills
