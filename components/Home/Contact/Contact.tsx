@@ -37,16 +37,17 @@ const Contact = () => {
                     {/* social icon */}
                     <div className='flex items-center mt-8 space-x-3'>
                         <div className='w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer flex-col hover:bg-blue-800 transition-all duration-300'>
-                            <FaLinkedin className='text-white w-6 h-6' />
+                        <a href='https://www.linkedin.com/in/biplab-jena-7a741427b/'><FaLinkedin className='text-white w-6 h-6' /></a>
+                            
                         </div>
                         <div className='w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer flex-col hover:bg-gray-900 transition-all duration-300'>
-                            <FaXTwitter className='text-white w-6 h-6' />
+                            <a href='https://x.com/BiplabJ82399517'><FaXTwitter className='text-white w-6 h-6' /></a>
                         </div>
                         <div className='w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer flex-col hover:bg-gray-900 transition-all duration-300'>
-                            <FaGithub className='text-white w-6 h-6' />
+                            <a href='https://github.com/Biplab6969'><FaGithub className='text-white w-6 h-6' /></a>
                         </div>
                         <div className='w-14 h-14 bg-blue-950/60 rounded-full flex items-center justify-center cursor-pointer flex-col hover:bg-yellow-500 transition-all duration-300'>
-                            <SiLeetcode className='text-white w-6 h-6' />
+                            <a href='https://leetcode.com/u/jbiplab80/'><SiLeetcode className='text-white w-6 h-6' /></a>
                         </div>
                     </div>
                 </div>
