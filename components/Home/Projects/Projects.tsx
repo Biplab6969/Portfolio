@@ -19,7 +19,7 @@ export default function Projects() {
 
         <motion.div 
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
-          variants={staggerContainer}
+          // variants={staggerContainer}
           initial="initial"
           animate="animate"
         >
@@ -28,7 +28,7 @@ export default function Projects() {
               key={project.title}
               data-aos="fade-up" data-aos-anchor-placement="top-center"
               className="bg-white/10 rounded-lg shadow-md p-6 border border-white/20"
-              variants={fadeInUp}
+              // variants={fadeInUp}
               {...cardHoverSmall}
             >
               <div className="relative aspect-video mb-4 rounded-lg overflow-hidden">

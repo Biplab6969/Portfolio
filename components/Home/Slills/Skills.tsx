@@ -38,7 +38,7 @@ const Tools = [
     { name: "Postman", icon: <SiPostman /> },
 ]
 
-const Card = ({ skil, i }) => (
+const Card = ({ skil, i } : any) => (
     <Tilt key={skil.name} scale={1.2} transitionSpeed={400}>
         <div
             data-aos="flip-right"
