@@ -12,8 +12,8 @@ const Services = () => {
                 <div data-aos="fade-right" data-aos-anchor-placement="top-center">
                     <ServiceCard
                         icon="/images/s1.png"
-                        name="UI and UX"
-                        description="I create visually appealing, user-friendly designs that enhance usability and deliver an engaging experience, ensuring every interaction feels smooth and intuitive."
+                        name="DSA "
+                        description="I am a problem solver, tackling DSA challenges across platforms like LeetCode, GeeksforGeeks, and others. I focus on applying efficient data structures and algorithms to create optimized, scalable, and reliable solutions."
                     />
                 </div>
                 <div data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-delay="100">
@@ -33,8 +33,8 @@ const Services = () => {
                 <div data-aos="fade-right" data-aos-anchor-placement="top-center" data-aos-delay="300">
                     <ServiceCard
                         icon="/images/s3.png"
-                        name="Design & Creative"
-                        description="I combine creative thinking with modern design tools to craft unique visuals, branding, and layouts that leave a lasting impression."
+                        name="UI and UX"
+                        description="I create visually appealing, user-friendly designs that enhance usability and deliver an engaging experience, ensuring every interaction feels smooth and intuitive."
                     />
                 </div>
             </div>
