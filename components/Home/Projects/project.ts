@@ -8,7 +8,7 @@ export const projects: Project[] = [
     description: 'A project management web application that allows users to create workspaces, manage tasks, assign team members, and track progress in real time.',
     technologies: ['React', 'TypeScript', 'React Router v7', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB'],
     githubLink: 'https://github.com/Biplab6969/project-manager-frontend',
-    demoLink: 'https://project-manager-frontend-ten.vercel.app/dashboard',
+    demoLink: 'https://project-manager-frontend-ten.vercel.app/',
     image: '/images/taskhub.png',
   },
   {
