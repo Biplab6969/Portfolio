@@ -8,7 +8,6 @@ import emailjs from '@emailjs/browser'
 
 const Contact = () => {
     const form = useRef<HTMLFormElement | null>(null);
-    // no local state needed for now
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!form.current) return;
