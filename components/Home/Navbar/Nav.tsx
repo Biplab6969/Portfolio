@@ -1,6 +1,5 @@
 "use client";
 import { NavLinks } from '@/constant/constant'
-import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { BiDownload } from 'react-icons/bi'
 import { FaCode } from 'react-icons/fa'
@@ -12,6 +11,11 @@ type Props = {
 
 const Nav = ({ openNav }: Props) => {
     const [navBg, setNavBg] = useState(false);
+    // smooth scroll to section id
+    const scrollToSection = (id: string) => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
 
     useEffect(() => {
         const handler = () => {
@@ -38,13 +42,40 @@ const Nav = ({ openNav }: Props) => {
                 {/* navlinks */}
                 <div className='hidden lg:flex items-center space-x-10'>
                     {NavLinks.map((link) => {
-                        return <Link
-                            key={link.id}
-                            href={link.url}
-                            className='text-base hover:text-cyan-300 text-white font-medium transition-all duration-200'
-                        >
-                            <p>{link.label}</p>
-                        </Link>
+                        const handleClick = () => {
+                            switch (link.label) {
+                                case 'Home':
+                                    scrollToSection('hero');
+                                    break;
+                                case 'Services':
+                                    scrollToSection('services');
+                                    break;
+                                case 'Education':
+                                    scrollToSection('education');
+                                    break;
+                                case 'Projects':
+                                    scrollToSection('projects');
+                                    break;
+                                case 'Skills':
+                                    scrollToSection('skills');
+                                    break;
+                                case 'Contacts':
+                                    scrollToSection('contacts');
+                                    break;
+                                default:
+                                    break;
+                            }
+                        };
+
+                        return (
+                            <button
+                                key={link.id}
+                                onClick={handleClick}
+                                className='text-base hover:text-cyan-300 text-white font-medium transition-all duration-200'
+                            >
+                                <span>{link.label}</span>
+                            </button>
+                        );
                     })}
                 </div>
                 <div className='flex items-center space-x-4'>

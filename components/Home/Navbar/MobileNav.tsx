@@ -1,6 +1,5 @@
 
 import { NavLinks } from '@/constant/constant'
-import Link from 'next/link'
 import React from 'react'
 import { CgClose } from 'react-icons/cg'
 
@@ -19,12 +18,30 @@ const MobileNav = ({closeNav, showNav}:Props) => {
             {/* navlinks */}
             <div className={`text-white ${navOpen} fixed justify-center flex flex-col h-full transform transition-all duration-500 delay-300 w-[80%] sm:w-[60%] bg-cyan-800 space-y-6 z-[100050] right-0`}>
                 {NavLinks.map((link) => {
+                    const handleClick = () => {
+                        const id = ((): string => {
+                            switch (link.label) {
+                                case 'Home': return 'hero';
+                                case 'Services': return 'services';
+                                case 'Education': return 'education';
+                                case 'Projects': return 'projects';
+                                case 'Skills': return 'skills';
+                                case 'Contacts': return 'contacts';
+                                default: return '';
+                            }
+                        })();
+
+                        if (id) {
+                            const el = document.getElementById(id);
+                            if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                        closeNav();
+                    };
+
                     return (
-                        <Link key={link.id} href={link.url}>
-                            <p className='text-white w-fit text-xl ml-12 border-b-[1.5px] pb-1 border-white sm:text-[30px]'>
-                                {link.label}
-                            </p>
-                        </Link>
+                        <button key={link.id} onClick={handleClick} className='text-white w-fit text-xl ml-12 border-b-[1.5px] pb-1 border-white sm:text-[30px]'>
+                            {link.label}
+                        </button>
                     )
                 })}
                 {/* cross icon */}

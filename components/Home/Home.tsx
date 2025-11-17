@@ -7,7 +7,7 @@ import Projects from './Projects/Projects'
 import Skills from './Slills/Skills'
 import Contact from './Contact/Contact'
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
+import 'aos/dist/aos.css'; 
 
 
 const Home = () => {
@@ -27,14 +27,14 @@ const Home = () => {
   },[])
   return (
     <div className='overflow-hidden'>
-      <Hero />
-      <Services />
-      <Resume />
-      <Projects />
-      <Skills />
-      <Contact />
+      <div id='hero'><Hero /></div>
+      <div id='services'><Services /></div>
+      <div id='education'><Resume /></div>
+      <div id='projects'><Projects /></div>
+      <div id='skills'><Skills /></div>
+      <div id='contacts'><Contact /></div>
     </div>
-  )
+  );
 }
 
 export default Home

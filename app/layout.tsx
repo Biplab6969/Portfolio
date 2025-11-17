@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ResposiveNav from "@/components/Home/Navbar/ResposiveNav";
+import { SectionProvider } from '@/components/Section/SectionContext';
 import Footer from "@/components/Home/Footer/Footer"
 import ScrollToTop from "@/components/Helper/ScrollToTop";
 
@@ -24,8 +25,10 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${font.className} antialiased bg-[#0d0d1f]`}>
-        <ResposiveNav />
-        {children}
+        <SectionProvider>
+          <ResposiveNav />
+          {children}
+        </SectionProvider>
         <Footer />
         <ScrollToTop />
       </body>
