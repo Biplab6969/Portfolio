@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 import { BiEnvelope, BiMap, BiPhone } from 'react-icons/bi'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FaTwitter } from 'react-icons/fa'
@@ -8,12 +8,11 @@ import emailjs from '@emailjs/browser'
 
 const Contact = () => {
     const form = useRef<HTMLFormElement | null>(null);
-    const [, setIsSent] = useState<boolean>(false);
+    // no local state needed for now
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!form.current) return;
         emailjs.sendForm("service_icwf1q5", "template_fd2uuqp", form.current, "4DInBU3p0-5TVZf2o").then(() => {
-            setIsSent(true);
             if (form.current) form.current.reset();
             toast.success("Message sent sucessfully", {
                 position: "top-right",
