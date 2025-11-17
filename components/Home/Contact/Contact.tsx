@@ -8,7 +8,7 @@ import emailjs from '@emailjs/browser'
 
 const Contact = () => {
     const form = useRef<HTMLFormElement | null>(null);
-    const [isSent, setIsSent] = useState<boolean>(false);
+    const [, setIsSent] = useState<boolean>(false);
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!form.current) return;
@@ -25,8 +25,9 @@ const Contact = () => {
                 theme: 'dark',
             });
         },
-            (error: any) => {
-                console.error("Error sending message:", error);
+            (error: unknown) => {
+                if (error instanceof Error) console.error("Error sending message:", error.message);
+                else console.error("Error sending message:", error);
                 toast.error("Failed to send message, Please try Again.", {
                     position: "top-right",
                     autoClose: 3000,

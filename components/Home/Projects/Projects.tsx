@@ -4,7 +4,7 @@ import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
 import { projects } from './project'
-import { cardHoverSmall, fadeInUp, staggerContainer } from '@/utils/animations'
+import { cardHoverSmall, fadeInUp } from '@/utils/animations'
 
 export default function Projects() {
   return (
